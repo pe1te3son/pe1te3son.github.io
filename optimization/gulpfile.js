@@ -13,14 +13,14 @@ var imgSrc = './**/*.jpg'; //*src = source
 var imgDist = './'; //*Dist = distribution
 
 //css
-var cssSrc = './**/*.css';
+var cssSrc = ['./**/*.css', '!./**/*.min.css' ];
 var cssDist = './';
 
 //js
-var jsSrc = './js/**/*.js';
+var jsSrc = ['./js/**/*.js', '!./js/**/*.min.js'];
 var jsDist = './js/';
 
-var jsSrcViews = './views/js/**/*.js';
+var jsSrcViews = ['./views/js/**/*.js', '!./views/js/**/*.min.js'];
 var jsDistViews = './views/js/';
 ///////////////
 //// CSS
@@ -40,7 +40,7 @@ gulp.task('resize', function () {
     .pipe(imageResize({
       imageMagick: true,
       width : 800,
-      quality: 0.6,
+      quality: 0.4,
       upscale : false
 
     }))
