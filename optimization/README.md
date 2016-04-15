@@ -6,6 +6,7 @@
   1. I moved all variables in changePizzaSizes() function outside of For Loop,
   2. Created new variables which gets randomPizzaContainer by class,
   3. Moved scrollTop function outsice of For Loop in updatePositions() function,
+  4. Moved `var pizzasDiv = document.getElementById("randomPizzas");` and `var movingPizzas1 = document.getElementById("movingPizzas1");` outside of ForLoop
 
 ##### index.html
   1. In index.html I added async attribute to scripts tags
@@ -17,7 +18,6 @@
   1. Compressed all images
   2. Compressed all css and js files
   3. updated all `<link>` attributes in all html files
-  3. I manually merged Compressed css files for pizza.html and updated `<link>` attribute
 
 #### Gulp
 
