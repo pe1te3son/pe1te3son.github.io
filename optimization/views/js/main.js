@@ -451,12 +451,12 @@ var resizePizzas = function(size) {
   // Iterates through pizza elements on the page and changes their widths
 
   function changePizzaSizes(size) {
+    //all variables here, to maximize performance
     var pizzaContainer = document.getElementsByClassName("randomPizzaContainer");
-      var dx = determineDx(pizzaContainer[0], size);
-        var newwidth = (pizzaContainer[0].offsetWidth + dx) + 'px';
+    var dx = determineDx(pizzaContainer[0], size);
+    var newwidth = (pizzaContainer[0].offsetWidth + dx) + 'px';
+
     for (var i = 0; i < pizzaContainer.length; i++) {
-
-
       pizzaContainer[i].style.width = newwidth;
     }
   }
@@ -504,12 +504,14 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 // Moves the sliding background pizzas based on scroll position
 function updatePositions() {
   frame++;
-  var scrollTop = document.body.scrollTop;
+  //pixels from top
+  var scroll_top = document.body.scrollTop;
   window.performance.mark("mark_start_frame");
-
-  var items = document.querySelectorAll('.mover');
+  //selects all elements with class mover, used getElementsByClassName to improve performance
+  var items = document.getElementsByClassName('mover');
   for (var i = 0; i < items.length; i++) {
-    var phase = Math.sin((scrollTop / 1250) + (i % 5));
+    var phase = Math.sin((scroll_top / 1250) + (i % 5));
+    //sets position for every elemet
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
 
