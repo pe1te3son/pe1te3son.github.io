@@ -11,7 +11,7 @@
 
 ##### index.html
   1. In index.html I added async attribute to scripts tags
-  2. Fixed google fonts link
+  2. Disabled google fonts link as it was slowing the site
   3. Added media="print" for print stylesheets
     _project-*.html_
 
