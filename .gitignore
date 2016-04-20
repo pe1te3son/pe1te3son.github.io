@@ -1,43 +1,12 @@
-
-# Created by https://www.gitignore.io/api/bower,dropbox,node,windows,sass
-
-### Bower ###
+node_modules
+dist
+.tmp
+.sass-cache
 bower_components
-.bower-cache
-.bower-registry
-.bower-tmp
-
-
-### Dropbox ###
-# Dropbox settings and caches
+test/bower_components
 .dropbox
 .dropbox.attr
 .dropbox.cache
-
-
-### Node ###
-# Logs
-logs
-*.log
-npm-debug.log*
-
-
-# Runtime data
-pids
-*.pid
-*.seed
-
-
-# Dependency directories
-node_modules
-jspm_packages
-
-# Optional npm cache directory
-.npm
-
-# Optional REPL history
-.node_repl_history
-
 
 ### Windows ###
 # Windows image file caches
@@ -58,11 +27,3 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
-
-
-### Sass ###
-.sass-cache/
-*.css.map
-
-### Prepros###
-prepros.cfg
