@@ -1,1 +1,1 @@
-"use strict";function offcanvas(){var a=$("#main-navigation"),s=$("#shift-body"),f=$("#nav-switch");a.click(function(){a.removeClass("offCanvas"),s.removeClass("offCanvas"),f.removeClass("fa-times").addClass("fa-bars")}),f.click(function(){a.toggleClass("offCanvas"),s.toggleClass("offCanvas"),f.hasClass("fa-bars")?$(this).removeClass("fa-bars").addClass("fa-times"):$(this).removeClass("fa-times").addClass("fa-bars")})}$(document).ready(function(){offcanvas()});
+"use strict";console.log("'Allo 'Allo!");
