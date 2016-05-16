@@ -330,6 +330,5 @@ function hasWon(player){
     player.x = player_set.default_x;
     player.y = player_set.default_y;
     player.stop = true;
-    console.log('win');
   }
 }

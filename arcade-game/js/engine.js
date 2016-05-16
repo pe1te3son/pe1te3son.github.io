@@ -184,7 +184,7 @@ var Engine = (function(global) {
         player.gm = false;
         player.stop = true;
       }else if(player.win === true){
-        var message = document.getElementById('message').innerHTML = "You won!";
+        var message = document.getElementById('message').innerHTML = "You`re winner!";
         var reset = document.getElementById("reset");
         reset.style.display = 'block';
         player.win = false;
