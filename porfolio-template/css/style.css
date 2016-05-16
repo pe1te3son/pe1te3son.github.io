@@ -1,0 +1,185 @@
+/*********************
+******* Global
+**********************/
+
+body {
+  font-family: 'Nunito', sans-serif;
+  color:#595959;
+}
+
+hr {
+  border-top: 5px solid #eee;
+  border-radius: 5px;
+}
+
+/*********************
+******* Header
+**********************/
+
+.header {
+  margin-top: 10px;
+}
+
+.heading-cont {
+  text-align: right;
+}
+
+.site-title {
+font-family: 'Advent Pro', sans-serif;
+letter-spacing: 0.1em;
+font-size: 3em;
+}
+
+
+@media screen and (max-width: 767px) {
+  .heading-cont, .logo{
+    text-align: center;
+  }
+
+  .logo {
+    display: block;
+    margin: 0 auto;
+  }
+
+}
+
+/*********************
+******* Slider
+**********************/
+
+#slider {
+  padding: 0;
+}
+
+#slider .slides {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#slider .slide {
+  display: none;
+  max-height: 50vh;
+  overflow: hidden;
+}
+
+#slider .slide-active {
+  display: block;
+}
+
+/*********************
+******* Main
+**********************/
+
+.work-belt {
+  margin-top: 40px;
+}
+
+.work-unit {
+  padding: 5px;
+  margin-bottom: 40px;
+}
+
+.work-unit>a {
+  color: #595959;
+  text-decoration: none;
+}
+
+.work-unit>a:hover .unit-name {
+  color: tomato;
+}
+
+.work-unit .description-cont {
+  width: 90%;
+  margin: 10px auto;
+  position: relative;
+}
+
+.description-cont>p {
+  padding: 5px;
+}
+
+.description {
+  height: 100px;
+  overflow: hidden;
+}
+
+.unit-name {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  padding: 10px;
+  margin: 0;
+  top: -50px;
+  background: white;
+  color: #2F6F9F;
+}
+
+/*fade effect at the bottom of work unit*/
+
+.fadeout {
+    position: absolute;
+    bottom: 0em;
+    width:100%;
+    height: 4em;
+    background: -webkit-linear-gradient(
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 100%
+    );
+    background-image: -moz-linear-gradient(
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 100%
+    );
+    background-image: -o-linear-gradient(
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 100%
+    );
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 100%
+    );
+    background-image: -ms-linear-gradient(
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 100%
+    );
+}
+
+@media screen and (max-width: 767px) {
+  .work-unit {
+    max-width: 90%;
+    margin: 10px auto 40px;
+  }
+
+  .work-banner {
+    max-height: 35vh;
+    overflow: hidden;
+  }
+
+}
+
+/*********************
+******* Footer
+**********************/
+
+.site-footer {
+  text-align: center;
+  font-size: 1.5em;
+  padding-bottom: 5em;
+}
+
+.site-footer a:hover {
+  color: tomato;
+}
+
+.social-icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+.site-footer svg path {
+  fill: #2F6F9F;
+}
+
+.site-footer svg:hover path {
+  fill: tomato;
+}
