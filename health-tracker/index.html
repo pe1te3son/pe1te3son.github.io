@@ -1,0 +1,54 @@
+<!doctype html><html lang=""><head><meta charset="utf-8"><meta name="description" content=""><meta name="viewport" content="width=device-width,initial-scale=1"><title>Health Tracker</title><script type="text/javascript">WebFontConfig = {
+        google: { families: [ 'Ubuntu:400,700:latin' ] }
+      };
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })();</script><link rel="icon" href="favicon.png" type="image/png"><!-- Place favicon.ico in the root directory --><link rel="stylesheet" href="styles/vendor.css"><link rel="stylesheet" href="styles/main.css"></head><body><!--[if lt IE 10]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]--><div class="wrapper" id="app"><header class="header"><div class="container"><div class="row"><div class="col-sm-6"><h1 class="app-title">Health Tracker</h1></div><div class="col-sm-6 navigation-form"><ul id="login-controls" class="nav-list text-xs-center"></ul><div id="form-wrapper"><div id="form-cont"></div></div></div><!-- navigation-form ends --></div><!-- row ends --></div><!-- container ends --></header><div class="container"><section class="row info-section"><div class="col-sm-6 col-xs-12" id="search-view"><form class="" id="search-form"><div class="form-group"><label class="sr-only" for="search-input">Search input</label><input type="text" class="form-control" id="search-input" placeholder="Search food product"></div></form><div class="search-controls"><i id="datepicker-btn" class="fa fa-calendar panel-control selected-panel" aria-hidden="true" data="datepicker"></i> <i id="search-list-btn" class="fa fa-search panel-control" aria-hidden="true" data="search-list"></i></div><hr class="hr"><div class="search-result-cont"><span class="product-heading search-heading">Product</span> <span class="calories-heading search-heading">Calories</span><ul id="search-result-list" class="col-xs-12"></ul><button id="search-menu-toggle-btn" class="visible-xs"><i class="fa fa-angle-double-up" aria-hidden="true"></i></button></div><div id="datepicker"><input type="text" id="datepicker-input" style="display: none"><div id="datepicker-container"></div><hr class="hr"></div></div><!-- search-view ends --><div class="col-sm-6 col-xs-12" id="saved-food-view"><div class="all-calories-cont"><div class="calories-sum"><span id="all-calories">0.0</span> <span>Calories</span></div><span id="date-today"></span></div><hr class="hr"><ul id="saved-food-list" class="col-xs-12"></ul></div><!-- saved-food-view ends --></section><!-- row ends --></div><!-- container ends --><section class="graph-section"><div class="container"><div class="row"><div class="col-xs-12"><div id="chartdiv" style="height: 280px; width: 100%"><div class="graph-spinner"><i class="fa fa-cog fa-spin fa-3x fa-fw"></i></div></div></div></div></div></section><footer class="footer"><p class="text-center">Powered with Nutritionix API</p><p class="copyrights text-center">Copyright ©&nbsp;<script type="text/javascript">var d = new Date()
+            document.write(d.getFullYear())</script>&nbsp;Peter Janak.</p></footer></div><!-- wrapper/app ends --><script type="text/template" id="login-controls-template"> <% if (loggedIn) { %> <li class="nav-item" id="log-out">Log Out</li> <% } else { %> <li class="nav-item" id="login">Log in</li>
+        <li class="nav-item" id="register">Register</li> <% } %> </script><script type="text/template" id="saved-single-template"><div class="col-xs-10">
+        <span class="food-item brand-name"><%= brandName %></span>
+        <span class="food-item food-name">- <%= name %></span>
+      </div>
+      <div class="col-xs-2 food-calories">
+        <span class="food-item"><%= calories %></span>
+      </div></script><script type="text/template" id="search-single-template"><div class="col-xs-10">
+        <span class="search-item brand-name"><%= brandName %></span>
+        <span class="search-item food-name">- <%= name %></span>
+      </div>
+      <div class="col-xs-2 food-calories">
+        <span class="search-item"><%= calories %></span>
+      </div></script><script type="text/template" id="login-form-template"><form class="form-horizontal form-unit" id="<%= id  %>-form">
+        <div class="form-group">
+          <p class="col-xs-12" id="error-msg-cont"></p>
+        </div>
+        <div class="form-group">
+          <label for="inputEmail" class="sr-only control-label">Email</label>
+          <div class="col-xs-12">
+            <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword" class="sr-only control-label">Password</label>
+          <div class="col-xs-12">
+            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+          </div>
+        </div> <% if (!login) { %> <div class="form-group">
+          <label for="inputPasswordConfirm" class="sr-only control-label">Confirm Password</label>
+          <div class="col-xs-12">
+            <input type="password" class="form-control" id="inputPasswordConfirm" placeholder="Confirm Password">
+          </div>
+        </div> <% } %> <div class="form-group">
+          <div class="col-xs-12 text-left" id="login-btn-cont"> <% if (login) { %> <button type="submit" class="btn btn-default" id="login-btn">Log in</button> <% } else { %> <button type="submit" class="btn btn-default" id="register-btn">Register</button> <% } %> <div id="spinner-cont"></div>
+          </div>
+        </div>
+
+      </form></script><script src="scripts/vendor.js"></script><!--[if lt IE 9]>
+      <script language="javascript" type="text/javascript" src="plugins/excanvas.js"></script>
+    <![endif]--><script src="scripts/plugins.js"></script><!-- Firebase --><script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script><!-- BackboneFire --><script src="https://cdn.firebase.com/libs/backbonefire/0.5.1/backbonefire.min.js"></script><script src="scripts/main.js"></script></body></html>
